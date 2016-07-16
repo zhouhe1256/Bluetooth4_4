@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bluetooth.le"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <activity
+            android:name="com.example.bluetooth.le.DeviceControlActivity"
+            android:label="@string/app_name" 
+            
+              android:launchMode="singleTask"
+              android:screenOrientation="sensorLandscape"
+           >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+      
+       
+        <service android:name=".BluetoothLeService" android:enabled="true"/>
+        <activity android:name="com.example.bluetooth.history.XueYangHistoryActivity"
+            
+             android:launchMode="singleTask"
+            android:screenOrientation="landscape"></activity>
+         <activity android:name="com.example.bluetooth.history.XueYaHistoryActivity"
+            
+             android:launchMode="singleTask"
+            android:screenOrientation="landscape"></activity>
+                  <activity android:name="com.example.bluetooth.history.MailvHistoryActivity"
+            
+             android:launchMode="singleTask"
+            android:screenOrientation="landscape"></activity>
+                    <activity android:name="com.example.bluetooth.history.TiwenHistoryActivity"
+            
+             android:launchMode="singleTask"
+            android:screenOrientation="landscape"></activity>
+    </application>
+
+</manifest>
